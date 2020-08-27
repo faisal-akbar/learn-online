@@ -1,0 +1,12 @@
+import React from 'react';
+
+const CartItem = (props) => {
+  const { title, current_price } = props.item;
+  return (
+    <li className="list-group-item d-flex my-1 px-3 border-bottom justify-content-between">
+      <span>{title}</span> <span> ${current_price}</span>
+    </li>
+  );
+};
+
+export default CartItem;
