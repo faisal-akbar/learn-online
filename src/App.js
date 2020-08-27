@@ -6,8 +6,8 @@ import Heading from './components/Heading/Heading';
 import CourseItem from './components/Courses/CourseItem';
 import CartItem from './components/Cart/CartItem';
 
-
 function App() {
+  // Get and set data
   const coursesData = fakeData;
   const [courses, setCourses] = useState(coursesData);
   const [cart, setCart] = useState([]);
@@ -43,6 +43,7 @@ function App() {
       <div className='container-fluid m-2'>
         <div className='row'>
           <div className='col-lg-8 px-3'>
+            {/* pass props in CourseItem Component */}
             {courses.map((course) => (
               <CourseItem
                 key={course.id}
@@ -54,13 +55,15 @@ function App() {
           <div className='col-lg-4'>
             <div className='card my-3 py-3 mx-3'>
               <div className='card-body'>
+                {/* Show number of added item in cart */}
                 <h4 className='text-center'>{cart.length} Courses in Cart</h4>
                 <ul className='list-group'>
+                  {/* To show name of item added in cart, pass item as props in CartItem Component */}
                   {cart.map((item) => (
                     <CartItem item={item} />
                   ))}
                 </ul>
-
+                {/* Show subtotal, tax and total */}
                 <ul className='list-group '>
                   <li className='list-group-item d-flex justify-content-between align-items-center border-0 px-3 pb-0'>
                     Subtotal
@@ -82,7 +85,7 @@ function App() {
                     </span>
                   </li>
                 </ul>
-
+                {/* Checkout button, no functionality added yet */}
                 <button type='button' className='btn btn-primary btn-block'>
                   Checkout
                 </button>

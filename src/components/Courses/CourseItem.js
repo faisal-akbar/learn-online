@@ -8,6 +8,7 @@ import {
 import { Badge } from 'react-bootstrap';
 
 const CourseItem = (props) => {
+  // Get property from course received as props from App.js
   const {
     title,
     img,
@@ -19,13 +20,14 @@ const CourseItem = (props) => {
     student_enrolled,
     badge,
   } = props.course;
-  
+
   return (
     <div className='card m-3'>
       <div className='card-body'>
         <div className='row mb-4'>
           <div className='col-md-5 col-lg-3 col-xl-3'>
             <div className='mb-3 mb-md-0'>
+              {/* Show image */}
               <img className='img-fluid w-100' src={img} alt={title} />
             </div>
           </div>
@@ -33,11 +35,14 @@ const CourseItem = (props) => {
             <div>
               <div className='d-flex justify-content-between'>
                 <div>
+                  {/* Show title */}
                   <h5>{title}</h5>
                   <p className='mb-3 text-muted text-uppercase small'>
+                    {/* Show Instructor name */}
                     {instructors_name}
                   </p>
                   <p className='mb-2 small'>
+                    {/* Show Rating Star */}
                     <small className='text-warning'>
                       <FontAwesomeIcon icon={faStar} />
                       <FontAwesomeIcon icon={faStar} />
@@ -45,17 +50,20 @@ const CourseItem = (props) => {
                       <FontAwesomeIcon icon={faStar} />
                       <FontAwesomeIcon icon={faStarHalf} />
                     </small>{' '}
+                    {/* Show Student Rated */}
                     <small className='text-muted'>
                       {' '}
                       {rating} ({student_rated})
                     </small>
                   </p>
+                  {/* Show Student Enrolled */}
                   <p className='mb-3 text-muted small'>
                     Student Enrolled: {student_enrolled}
                   </p>
                 </div>
                 <div>
                   <div className='mb-0'>
+                    {/* Call addToCart function from App.js, when user click on each item */}
                     <button
                       className='btn btn-sm btn-success'
                       onClick={() => props.addToCart(props.course)}
@@ -71,6 +79,7 @@ const CourseItem = (props) => {
                 </div>
                 <div>
                   <h5 className='mb-1'>
+                    {/* Show Current Price and Previous Price of courses */}
                     <span>
                       <strong>${current_price}</strong>
                     </span>

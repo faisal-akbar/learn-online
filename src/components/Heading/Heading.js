@@ -3,6 +3,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 
 const Heading = () => {
   return (
+    // Navbar section, no functionality added yet
     <div>
       <Navbar
         collapseOnSelect
